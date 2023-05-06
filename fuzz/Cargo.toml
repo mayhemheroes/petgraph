@@ -1,0 +1,31 @@
+[package]
+name = "petgraph-fuzz"
+version = "0.1.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.petgraph]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "dijkstra"
+path = "fuzz_targets/dijkstra.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "isomorphic"
+path = "fuzz_targets/isomorphic.rs"
+test = false
+doc = false

@@ -1,0 +1,7 @@
+project: petgraph
+target: isomorphic
+duration: 90
+
+cmds:
+    - cmd: /isomorphic
+
