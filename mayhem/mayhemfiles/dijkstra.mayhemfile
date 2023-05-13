@@ -1,0 +1,7 @@
+project: petgraph
+target: dijkstra
+duration: 90
+
+cmds:
+    - cmd: /dijkstra
+
