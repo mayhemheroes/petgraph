@@ -1,0 +1,5 @@
+project: petgraph
+target: fuzz
+
+cmds:
+  - cmd: /fuzz-mst
