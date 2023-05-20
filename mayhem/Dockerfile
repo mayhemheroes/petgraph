@@ -1,8 +1,8 @@
 # Build step
 FROM fuzzers/cargo-fuzz:0.11.0 as builder
 
-# Put sources in /zet
-ADD . /petgraph
+# Put sources in /project
+ADD . /project
 WORKDIR /project
 
 RUN cargo fuzz build
