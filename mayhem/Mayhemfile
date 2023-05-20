@@ -1,5 +1,5 @@
 project: petgraph
-target: fuzz
+target: mst
 
 cmds:
-  - cmd: /fuzz-mst
+  - cmd: /mst
