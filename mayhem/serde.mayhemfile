@@ -1,0 +1,5 @@
+project: petgraph
+target: serde
+
+cmds:
+  - cmd: /serde

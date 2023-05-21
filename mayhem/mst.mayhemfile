@@ -1,0 +1,5 @@
+project: petgraph
+target: mst
+
+cmds:
+  - cmd: /mst

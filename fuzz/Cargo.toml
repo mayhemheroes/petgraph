@@ -1,0 +1,40 @@
+[package]
+name = "petgraph-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+arbitrary = { version = "1", features = ["derive"] }
+libfuzzer-sys = "0.4"
+serde_json = "1.0.96"
+
+[dependencies.petgraph]
+path = ".."
+features = ["serde-1"]
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[lib]
+name = "util"
+path = "fuzz_targets/util.rs"
+
+[[bin]]
+name = "mst"
+path = "fuzz_targets/mst.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "serde"
+path = "fuzz_targets/serde.rs"
+test = false
+doc = false
