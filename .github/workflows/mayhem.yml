@@ -53,13 +53,14 @@ jobs:
 
   mayhem:
     needs: build
-    name: 'fuzz ${{ matrix.mayhemfile }}'
+    name: 'Fuzz ${{ matrix.mayhemfile }}'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         mayhemfile:
-          - mayhem/Mayhemfile
+          - mayhem/mst.mayhemfile
+          - mayhem/serde.mayhemfile
 
     steps:
       - uses: actions/checkout@v3
